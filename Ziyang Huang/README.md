@@ -46,7 +46,4 @@ We are here together to put everything in the box. We did do verifications on ou
 The accuracy of our system is good and the speed is acceptable. Here is an example we tested:
 
 A poem by Langston Hughes:
-
-## Project Demo
-Here is a video demonstrating our project:
-[Watch the Project Demo](project_demo_video.mp4)
+[Watch the Poem Demo](project_demo_video.mp4)
