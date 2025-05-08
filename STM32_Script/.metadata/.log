@@ -1,0 +1,38 @@
+!SESSION 2025-05-08 01:12:37.759 -----------------------------------------------
+eclipse.buildId=Version 1.18.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  E:\STM32 Project\445_Final\445_Final\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 E:\STM32 Project\445_Final\445_Final\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-05-08 01:12:56.141
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-05-08 01:12:56.142
+!MESSAGE Log4j2 initialized with config file E:\STM32 Project\445_Final\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-05-08 01:12:58.172
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-05-08 01:13:01.873
+!MESSAGE Indexed '445_Final' (36 sources, 156 headers) in 2.58 sec: 14,115 declarations; 53,222 references; 26 unresolved inclusions; 1,192 syntax errors; 2,610 unresolved names (3.7%)
+!SESSION 2025-05-08 01:18:12.936 -----------------------------------------------
+eclipse.buildId=Version 1.18.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  E:\STM32 Project\445_Final\445_Final\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 E:\STM32 Project\445_Final\445_Final\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-05-08 01:18:30.295
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-05-08 01:18:30.296
+!MESSAGE Log4j2 initialized with config file E:\STM32 Project\445_Final\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-05-08 01:18:34.309
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-05-08 01:18:36.287
+!MESSAGE Indexed '445_Final' (24 sources, 126 headers) in 1.89 sec: 12,053 declarations; 49,596 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.39%)
