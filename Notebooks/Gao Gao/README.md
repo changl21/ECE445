@@ -1,7 +1,14 @@
 # Lab Notebook
 
 ## 1st Week
-Deployed the VOSK model on the Raspberry Pi 5. This YouTube video inspired us a lot.
+We are on the initial proposal state of our project. We want to build a local live transicription device. Considering the popularity of AI model these years, we hope to implement this device via an AI model. It seems we have a lot of options, such as Wisper and VOSK. Though Wisper uses a sequence to sequence transformer model, we worried about its performance on a edge computing paltform. Besides, the VOSK model's website mentioned this model runs well on edge device, such as Raspberry Pi or Jetson. Therefore, we decided to use VOSK to implement our device.
+
+Then, our nect goal is determine the edge computing platform we will use. None of us has any experience with deploying a AI model on an edge device, so we need to ensure our computing platform is powerful enough. Here are several options: Jetson, Raspeberry Pi, or FPGA (PYNQ). Though PYNQ have decent performance and large enough memory to hold our VOSK model, there is no much resource available for us. Considering our initial goal is graduating, we do not want to risk ourself on a difficult project. Comparing Jetson and Raspebrry Pi, Jetson have much better performance. We seeked sugesstion from a TA, and he claimed Jetson would be a better solution for us. However, the latest Jetson Orin is out of stock. If we want to purchase the platform from the third party, its price was over $500! Finally, Raspberry Pi became our only choice. Our current problem is which Pi should we use?
+Raspberry Pi 5 is the latest released platform. It is said that Pi 5's performance is about doubled of Pi 4. Therefore, we ordered Pi 5.
+![Jetson](Jetson.jpg)
+![Raspberry Pi 5](Ras.jpg)
+
+It is about the end of this week, and we received our Raspberry Pi 5. Our goal is deploying the VOSK model on Raspberry Pi 5. We have no experience with Raspberry Pi. We noticed Python is already installed, but we can not download library. After a series of googling, we figured out we need to set up evironment first........ We though the commend of Pi OS would be to Linux. However, there is a slightly difference. We found a Youtube video that is helpful with our project. By following its instructtion, we successfully deployed VOSK on our Pi. Unlike the video, we had no mic there, so we just feed wav. file to the model to test its performance. We used two famous public speech: one is I Have a Dream, and the other is We choose to go to the Moon. The overall accuracy seemed decently good: it is just consistent with the expected value - 90%. (We estimated this value sentence by sentence. For a sentence with around 20 words, there are two error transcription occurs. Therefore, we think its error rate is about 90%).
 [https://www.youtube.com/watch?v=-0W_AxSD_t8](https://www.youtube.com/watch?v=-0W_AxSD_t8)
 
 ## 2nd Week
