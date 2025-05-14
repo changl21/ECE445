@@ -14,8 +14,8 @@ Raspberry Pi 5 is the latest released platform. It is said that Pi 5's performan
 # 2/16
 It is about the end of this week, and we received our Raspberry Pi 5. Our goal is deploying the VOSK model on Raspberry Pi 5. We have no experience with Raspberry Pi. We noticed Python is already installed, but we can not download library. After a series of googling, we figured out we need to set up evironment first........ We though the commend of Pi OS would be to Linux. However, there is a slightly difference. We found a Youtube video that is helpful with our project. By following its instructtion, we successfully deployed VOSK on our Pi. [https://www.youtube.com/watch?v=-0W_AxSD_t8](https://www.youtube.com/watch?v=-0W_AxSD_t8)Unlike the video, we had no mic there, so we just feed wav. file to the model to test its performance. We used two famous public speech: one is I Have a Dream, and the other is We choose to go to the Moon. The overall accuracy seemed decently good: it is just consistent with the expected value - 90%. 
 
-$$ For a sample sentence with 20 words, there are 2 errors $$
-$$ Error Rate = \frac{Error Words}{Total Words} = \frac{2}{20} $$
+For a sample sentence with 20 words, there are 2 errors:
+$$ Error_Rate = \frac{Error_Words}{Total_Words} = \frac{2}{20} $$
 
 We made our initial block diagram:
 ![Block Diagram Version 1](BlockDiagram_Old.jpg)
@@ -33,6 +33,10 @@ This is an online tutorial of setting up we used: [https://www.instructables.com
 ## 3rd Week
 
 # 3/11
+Assume the lecturer speaks 4 words per second (the normal speaking speed should be 2 – 3 words per second). Each letter consumes 7 bits of resource during transmission, and we assume each word has 8 letters on average (which should normally be 6). Hence, the transmission speed requirement is:
+$$ Speed = 4 word/s * 8 letter/word * 7 bit/letter = 224 b/s $$
+The speed is lower to the UART ports.
+
 We decided to use Arduino test our functionality. Though the demo stage may be fairly different from the our actual PCB, we still need to make proposal is reasonbale. We connected the Raspberry Pi's TX and RX to Arduino's RX and TX. Nothing was received or transmitted. A potential reason could be Arduino's logic level is inconsistent with Raspberry Pi's. Arduino's is 5V and Pi's is 3.3V. However, it does not make sense there is nothing transmitted or received. We used an oscilloscope to visualize the voltage level of Pi's TX, and the TX remains at 0V. We concerned that we might just burnd Pi's UART.
 
 ![Arduino Uno R3](arduino_uno_r3.png)
