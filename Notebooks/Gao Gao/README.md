@@ -17,7 +17,7 @@ It is about the end of this week, and we received our Raspberry Pi 5. Our goal i
 For a sample sentence with 20 words, there are 2 errors:
 
 ```math
-Error_Rate = \frac{Error_Words}{Total_Words} = \frac{2}{20}
+ErrorRate = \frac{ErrorWords}{TotalWords} = \frac{2}{20}
 ```
 
 We made our initial block diagram:
@@ -39,7 +39,7 @@ This is an online tutorial of setting up we used: [https://www.instructables.com
 Assume the lecturer speaks 4 words per second (the normal speaking speed should be 2 – 3 words per second). Each letter consumes 7 bits of resource during transmission, and we assume each word has 8 letters on average (which should normally be 6). Hence, the transmission speed requirement is:
 
 ```math
-Speed = 4 word/s * 8 letter/word * 7 bit/letter = 224 b/s
+Speed = 4 \frac{word}{s} * 8 \frac{letter}{word} * 7 \frac{bit}{letter} = 224 b/s
 ```
 
 The speed is lower to the UART ports.
