@@ -5,7 +5,7 @@
 # 2/10
 We are on the initial proposal state of our project. We want to build a local live transicription device. Considering the popularity of AI model these years, we hope to implement this device via an AI model. It seems we have a lot of options, such as Wisper and VOSK. Though Wisper uses a sequence to sequence transformer model, we worried about its performance on a edge computing paltform. Besides, the VOSK model's website mentioned this model runs well on edge device, such as Raspberry Pi or Jetson. Therefore, we decided to use VOSK to implement our device.
 
-Then, our nect goal is determine the edge computing platform we will use. None of us has any experience with deploying a AI model on an edge device, so we need to ensure our computing platform is powerful enough. Here are several options: Jetson, Raspeberry Pi, or FPGA (PYNQ). Though PYNQ have decent performance and large enough memory to hold our VOSK model, there is no much resource available for us. Considering our initial goal is graduating, we do not want to risk ourself on a difficult project. Comparing Jetson and Raspebrry Pi, Jetson have much better performance. We seeked sugesstion from a TA, and he claimed Jetson would be a better solution for us. However, the latest Jetson Orin is out of stock. If we want to purchase the platform from the third party, its price was over $500! Finally, Raspberry Pi became our only choice. Our current problem is which Pi should we use?
+Then, our nect goal is determine the edge computing platform we will use. None of us has any experience with deploying a AI model on an edge device, so we need to ensure our computing platform is powerful enough. Here are several options: Jetson, Raspeberry Pi, or FPGA (PYNQ). Though PYNQ have decent performance and large enough memory to hold our VOSK model, there is no much resource available for us. Considering our initial goal is graduating, we do not want to risk ourself on a difficult project. Comparing Jetson and Raspebrry Pi, Jetson have much better performance. We seeked sugesstion from a TA, and he claimed Jetson would be a better solution for us. However, the latest Jetson Orin is out of stock. If we want to purchase the platform from the third party, its price was over 500! Finally, Raspberry Pi became our only choice. Our current problem is which Pi should we use?
 Raspberry Pi 5 is the latest released platform. It is said that Pi 5's performance is about doubled of Pi 4. Therefore, we ordered Pi 5.
 
 ![Jetson](Jetson.jpg)
@@ -15,7 +15,10 @@ Raspberry Pi 5 is the latest released platform. It is said that Pi 5's performan
 It is about the end of this week, and we received our Raspberry Pi 5. Our goal is deploying the VOSK model on Raspberry Pi 5. We have no experience with Raspberry Pi. We noticed Python is already installed, but we can not download library. After a series of googling, we figured out we need to set up evironment first........ We though the commend of Pi OS would be to Linux. However, there is a slightly difference. We found a Youtube video that is helpful with our project. By following its instructtion, we successfully deployed VOSK on our Pi. [https://www.youtube.com/watch?v=-0W_AxSD_t8](https://www.youtube.com/watch?v=-0W_AxSD_t8)Unlike the video, we had no mic there, so we just feed wav. file to the model to test its performance. We used two famous public speech: one is I Have a Dream, and the other is We choose to go to the Moon. The overall accuracy seemed decently good: it is just consistent with the expected value - 90%. 
 
 For a sample sentence with 20 words, there are 2 errors:
-$$ Error_Rate = \frac{Error_Words}{Total_Words} = \frac{2}{20} $$
+
+```math
+Error_Rate = \frac{Error_Words}{Total_Words} = \frac{2}{20}
+```
 
 We made our initial block diagram:
 ![Block Diagram Version 1](BlockDiagram_Old.jpg)
@@ -34,7 +37,11 @@ This is an online tutorial of setting up we used: [https://www.instructables.com
 
 # 3/11
 Assume the lecturer speaks 4 words per second (the normal speaking speed should be 2 – 3 words per second). Each letter consumes 7 bits of resource during transmission, and we assume each word has 8 letters on average (which should normally be 6). Hence, the transmission speed requirement is:
-$$ Speed = 4 word/s * 8 letter/word * 7 bit/letter = 224 b/s $$
+
+```math
+Speed = 4 word/s * 8 letter/word * 7 bit/letter = 224 b/s
+```
+
 The speed is lower to the UART ports.
 
 We decided to use Arduino test our functionality. Though the demo stage may be fairly different from the our actual PCB, we still need to make proposal is reasonbale. We connected the Raspberry Pi's TX and RX to Arduino's RX and TX. Nothing was received or transmitted. A potential reason could be Arduino's logic level is inconsistent with Raspberry Pi's. Arduino's is 5V and Pi's is 3.3V. However, it does not make sense there is nothing transmitted or received. We used an oscilloscope to visualize the voltage level of Pi's TX, and the TX remains at 0V. We concerned that we might just burnd Pi's UART.
