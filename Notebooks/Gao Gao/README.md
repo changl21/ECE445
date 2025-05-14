@@ -62,28 +62,21 @@ After a series of research and tests, we realized that our Arduino board's USB p
 UART test passed! We confirm the functionality of transmitting text from the Raspberry Pi to the STM32 via UART. Here is the pseudocode:
 
 STM32
-
+```
 Initilize_UART1();
-
 Initilize_UART2();
-
 while (1) {
-
     UART1_Receive(Msg);
-
     UART2_Send(Msg); //Send Msg to PC via USB, since UART2 is occupied by USB
-
 }
-
+```
 Pi
-
+```
 import serial
-
 msg = "Hello World!"
-
 for char in msg:
     ser.write(char.encode('utf-8'))
-
+```
 
 ### 3/20
 Mic demo failed. Our analog mic cannot capture an audio signal with satisfactory quality to feed into the VOSK model. We decided to take advantage of ADC inside the STM32.
